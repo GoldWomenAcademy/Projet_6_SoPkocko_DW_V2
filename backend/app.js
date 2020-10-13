@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
 const path = require("path");
+require('dotenv').config()
 
 //Création de l'app express
 const app = express();
@@ -12,7 +13,7 @@ const userRoutes = require('./routes/user');
 const sauceRoutes = require('./routes/sauce');
 
 //Connexion MongoDB
-mongoose.connect('mongodb+srv://Jonli0:1WxOnQqeWvOGuL64@clusterjo-0we1s.mongodb.net/SoPeckocko?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DBURL, {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })

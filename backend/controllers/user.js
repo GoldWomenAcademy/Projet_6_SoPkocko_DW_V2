@@ -10,7 +10,7 @@ exports.signup = (req, res, next) => {
     if (!securMail.test(req.body.email)) {
         return res.status(401).json({ message: 'Format Email invalide'});
     } 
-    else if (req.body.password.length < 7) {
+    else if (req.body.password.length < 7) { 
         return res.status(401).json({ message: 'Le MDP doit contenir 7 caractères minimum'});
     } else {
         bcrypt.hash(req.body.password, 10)
