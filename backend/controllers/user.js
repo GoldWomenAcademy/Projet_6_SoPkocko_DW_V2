@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const config = require('../config/auth.config');
 
-//Inscription utilisateur
+//Inscription utilisateur + Sécurité
 exports.signup = (req, res, next) => {
     const securMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,5})+$/;
     if (!securMail.test(req.body.email)) {
