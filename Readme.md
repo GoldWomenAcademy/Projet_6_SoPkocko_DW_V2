@@ -12,3 +12,6 @@ Cloner le projet.
 Dans le dossier du frontend
 Exécuter npm install.
 Exécuter npm start.
+
+.env :
+Remplacer .env_exemple en .env et mettre à jour l'url de connection à MongoDB
