@@ -14,4 +14,5 @@ Exécuter npm install.
 Exécuter npm start.
 
 .env :
-Remplacer .env_exemple en .env et mettre à jour l'url de connection à MongoDB
+1- Remplacer .env_exemple en .env
+2- Mettre à jour l'url de connection à MongoDB
