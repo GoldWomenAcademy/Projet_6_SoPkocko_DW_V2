@@ -31,12 +31,6 @@ app.use((req, res, next) => {
 //Gestion données reçues
 app.use(bodyParser.json());
 
-//Gestion images de manière statique
-app.use('/images', express.static(path.join(__dirname, 'images')));
-
-app.use('/api/auth', userRoutes);
-app.use('/api/sauces', sauceRoutes);
-  
 // SECURITY
 // Protection contre certaines vulnérabilités Web bien connues en définissant les en-têtes HTTP de manière appropriée.
 var helmet = require('helmet');
@@ -45,4 +39,12 @@ app.use(helmet());
 //En-tête X-Powered-By désactivé pour empêcher la détection des applications exécutant Express
 app.disable('x-powered-by');
 
+module.exports = app;
+
+//Gestion images de manière statique
+app.use('/images', express.static(path.join(__dirname, 'images')));
+
+app.use('/api/auth', userRoutes);
+app.use('/api/sauces', sauceRoutes);
+  
 module.exports = app;
